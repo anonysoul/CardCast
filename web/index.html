@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#121212">
+    <title data-i18n="title">CardCast · 实时音频</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/player.js"></script>
+</head>
+<body>
+    <main>
+        <section class="stage" data-i18n-aria="spectrum" aria-label="极光声波">
+            <canvas id="spectrum" data-i18n-aria="spectrumLabel" aria-label="随播放声音舒展的橙色、琥珀色和暖白色丝带" data-i18n="spectrum">极光声波</canvas>
+            <button id="unlock" type="button" hidden>
+                <span>
+                    <b data-i18n="unlock">播放</b>
+                    <small data-i18n="unlockHint">开始监听</small>
+                </span>
+            </button>
+            <div class="toolbar">
+                <button id="language" type="button" data-i18n-aria="switchLanguage" aria-label="当前语言：中文，点击切换为英文" lang="zh-CN">中文</button>
+                <button id="advanced" type="button" aria-expanded="false" aria-controls="details">高级</button>
+            </div>
+        </section>
+        <section id="details" hidden data-i18n-aria="details" aria-label="高级音频信息">
+            <div class="panel">
+                <div class="heading">
+                    <div>
+                        <h1 data-i18n="title">CardCast · 实时音频</h1>
+                        <p id="status" role="status">正在启动…</p>
+                    </div>
+                    <div class="controls">
+                        <button id="start" type="button" data-i18n="start">开始</button>
+                        <button id="stop" type="button" data-i18n="stop">停止</button>
+                    </div>
+                </div>
+                <dl>
+                    <div>
+                        <dt data-i18n="buffer">播放缓冲</dt>
+                        <dd><span id="buffer">0</span> <small>ms</small></dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="target">目标缓冲</dt>
+                        <dd><span id="target-buffer">60</span> <small>ms</small></dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="dropped">丢弃 / 缺失帧</dt>
+                        <dd id="dropped">0</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="rate">近 10 秒丢弃 / 缺失率</dt>
+                        <dd><span id="drop-rate">0.0</span> <small>%</small></dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="missing">到达前缺失</dt>
+                        <dd id="missing">0</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="trimmed">播放队列裁剪</dt>
+                        <dd id="trimmed">0</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="stale">过期音频丢弃</dt>
+                        <dd id="resync-drops">0</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="underruns">缓冲耗尽</dt>
+                        <dd id="underruns">0</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="recoveries">恢复次数</dt>
+                        <dd id="recoveries">0</dd>
+                    </div>
+                    <div>
+                        <dt data-i18n="reconnects">重连次数</dt>
+                        <dd id="reconnects">0</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+        <noscript>请启用 JavaScript 以播放实时音频。 / Enable JavaScript to play live audio.</noscript>
+    </main>
+</body>
+</html>
